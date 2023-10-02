@@ -1,0 +1,88 @@
+.dis_flex{
+    display: flex;
+    height: 150%;
+    width: 80%; 
+    margin: auto; 
+    margin-top: 4%;
+    background-color:white;
+    border-radius: 15px;
+    margin-bottom: 5%;
+}
+label{
+    font-size: medium;
+    color:  #3c4e9d;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
+}
+.reg_img{
+    padding-top: 43%;
+    padding-left: 0%;
+  
+}
+a{
+    text-decoration: none;
+}
+.color{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
+    width: 50%;
+    padding-left: 10%;
+    padding-top: 5%;
+    padding-bottom: 6%; 
+
+}
+.in{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
+    border: none;
+    background-color:  rgba(181, 136, 224, 0.161);
+    border-radius: 8px;
+    padding: 3% 6%; 
+  
+  
+}
+.reg{
+    color: white;
+    text-decoration: none;
+    border: 2px solid #3c4e9d;
+    padding: 2.5% 7% ;
+    margin-left: 17%;
+    border-radius: 6px;
+    background-color: #3c4e9d ;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+  .but{
+    font-size:large;
+    margin-top: 2%;
+    margin-left: 1%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
+    text-decoration: none;
+    background-color: transparent;
+    color: black;
+}
+input:focus{
+    outline:1px solid #3c4e9d;
+}
+select:focus{
+    outline:1px solid #3c4e9d;
+}
+.div-between{
+    margin-bottom: 4%;
+}
+.div-country{
+    margin-bottom: 7%;
+}  
+h3{
+    margin-top: 1%;
+    margin-bottom: 7%;
+    margin-left: 11%; 
+    font-size:x-large;
+     color:#3c4e9d;
+      font-weight:bolder;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+
+
+
+
+
+

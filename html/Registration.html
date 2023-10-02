@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Registration page</title>
+    <link href="../css/Registration.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgba(0, 0, 0, 0.163);
+        }
+    </style>
+</head>
+
+<body>
+    <a class="but" href="./home.html">Home</a>
+
+    <div class="dis_flex">
+        <div class="color">
+            <h3>REGISTRATION</h3>
+            <form>
+                <div class="div-between">
+                    <label for="email_id">Email ID:</lable>
+                        <input type="email" class="in" id="email_id" placeholder="xxx@xxx.xxx" autocomplete="off"
+                            name="email_id" required />
+                </div>
+
+                <div class="div-between">
+                    <label for="password">Password:</lable>
+                        <input class="in" id="password" placeholder="min 6 character" autocomplete="off" name="password"
+                            type="password" required />
+                </div>
+
+                <div class="div-between">
+                    <label for="first_name">First Name:</lable>
+                        <input class="in" type="text" id="first_name" placeholder="Enter First Name" autocomplete="off"
+                            name="first_name" minlength="3" maxlength="20" type="text" required />
+                </div>
+
+                <div class="div-between">
+                    <label for="last_name">Last Name:</lable>
+                        <input class="in" id="last_name" placeholder="Enter Last Name" autocomplete="off"
+                            name="last_name" minlength="3" maxlength="20" type="text" required />
+
+                </div>
+                <div class="div-between">
+                    <label for="mobile_no">Mobile No.:</lable>
+                        <input type="number" class="in" id="mobile_no" required placeholder="Enter Mobile No."
+                            autocomplete="off" name="mobile_no." />
+                </div>
+
+                <div class="div-between">
+                    <label>Gender:</lable>
+                        <input type="radio" class="in" id="male" name="gender" />
+                        <label for="male">Male</label>
+                        <input type="radio" class="in" id="female" name="gender" />
+                        <label for="female">Female</label>
+                        <input type="radio" class="in" id="other" name="gender" />
+                        <label for="other">Other</label>
+
+                </div>
+                <div class="div-country">
+                    <label>Country:</lable>
+                        <select class="in" name="Country">
+                            <option>India</option>
+                            <option>Japan</option>
+                            <option>China</option>
+                            <option>Russia</option>
+                            <option>USA</option>
+                            <option>Australia</option>
+                        </select>
+
+                </div>
+                <a class="reg" onclick="handleRegistration()" href="./Login.html">Register</a>
+            </form>
+        </div>
+        <div>
+            <img class="reg_img" src="../regester_page_img.png" />
+        </div>
+
+    </div>
+</body>
+<script src="../JS/registration.js"></script>
+
+</html>
