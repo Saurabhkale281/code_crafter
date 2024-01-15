@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
     <title>Registration page</title>
     <link href="../css/Registration.css" rel="stylesheet">
     <style>
         body {
             background-color: rgba(0, 0, 0, 0.163);
         }
-    </style>
+        
+    </style>    
 </head>
 
 <body>
     <a class="but" href="./home.html">Home</a>
 
-    <div class="dis_flex">
+    <div class="dis_flex" id="dis_media">
         <div class="color">
             <h3>REGISTRATION</h3>
             <form>
                 <div class="div-between">
                     <label for="email_id">Email ID:</lable>
-                        <input type="email" class="in" id="email_id" placeholder="xxx@xxx.xxx" autocomplete="off"
+                        <input style="margin-left: 4%;" type="email" class="in" id="email_id" placeholder="xxx@xxx.xxx" autocomplete="off"
                             name="email_id" required />
                 </div>
 
                 <div class="div-between">
                     <label for="password">Password:</lable>
-                        <input class="in" id="password" placeholder="min 6 character" autocomplete="off" name="password"
+                        <input style="margin-left: 2%;" class="in" id="password" placeholder="min 6 character" autocomplete="off" name="password"
                             type="password" required />
                 </div>
 
@@ -49,9 +48,9 @@
                             autocomplete="off" name="mobile_no." />
                 </div>
 
-                <div class="div-between">
+                <div class="div-between, mar">
                     <label>Gender:</lable>
-                        <input type="radio" class="in" id="male" name="gender" />
+                        <input  style="margin-left: 5%;" type="radio" class="in" id="male" name="gender" />
                         <label for="male">Male</label>
                         <input type="radio" class="in" id="female" name="gender" />
                         <label for="female">Female</label>
@@ -59,9 +58,9 @@
                         <label for="other">Other</label>
 
                 </div>
-                <div class="div-country">
+                <!-- <div class="div-country">
                     <label>Country:</lable>
-                        <select class="in" name="Country">
+                        <select style="margin-left: 5%;" class="in" name="Country">
                             <option>India</option>
                             <option>Japan</option>
                             <option>China</option>
@@ -70,7 +69,7 @@
                             <option>Australia</option>
                         </select>
 
-                </div>
+                </div> -->
                 <a class="reg" onclick="handleRegistration()" href="./Login.html">Register</a>
             </form>
         </div>
