@@ -68,10 +68,7 @@ select:focus{
 }
 .div-between{
     margin-bottom: 3%;
-}
-.div-country{
-    margin-bottom: 7%;
-}  
+} 
 h3{
     margin-top: 0%;
     margin-bottom: 4%;
@@ -84,7 +81,10 @@ h3{
 .mar{
     margin-bottom: 5%;
 }
-
+.formerror{
+    color: red;
+    font-size: small;
+}
 
 
 
