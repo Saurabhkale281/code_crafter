@@ -17,7 +17,7 @@
     <div class="dis_flex" id="dis_media">
         <div class="color">
             <h3>REGISTRATION</h3>
-            <form action="/myaction.php" name="myForm" onclick="return validateForm()" method="post">
+            <form onsubmit="registerUser(event)">
                 <div class="div-between">
                     <label for="email_id">Email ID:</lable>
                         <input style="margin-left: 4%;" type="email" class="in" id="email_id" placeholder="xxx@xxx.xxx" autocomplete="off"
@@ -49,16 +49,23 @@
                 </div>
 
                 <div class="div-between, mar">
-                    <label>Gender:</lable>
-                        <input  style="margin-left: 5%;" type="radio" class="in" id="male" name="gender" />
-                        <label for="male">Male</label>
-                        <input type="radio" class="in" id="female" name="gender" />
-                        <label for="female">Female</label>
-                        <input type="radio" class="in" id="other" name="gender" />
-                        <label for="other">Other</label><span class="formerror"></span>
-
+                    <label>Gender:</label>
+                    <label>
+                        <input style="margin-left: 5%;" class="in" type="radio" name="gender" value="male" >
+                        Male
+                    </label>
+            
+                    <label>
+                        <input class="in" type="radio" name="gender" value="female">
+                        Female
+                    </label>
+            
+                    <label>
+                        <input class="in" type="radio" name="gender" value="other">
+                        Other
+                    </label>
                 </div>
-                <a class="reg" onclick="handleRegistration()" href="./Login.html">Register</a>
+                 <input type="submit" value="Register" class="reg"></input> <!--./Login.html --> <!--  onsubmit="handleRegistration()" -->
             </form>
         </div>
         <div>
@@ -67,7 +74,7 @@
 
     </div>
 </body>
-<script src="../JS/registration.js">
+<script src="../JS/registration.js">        
 </script>
 
 </html>

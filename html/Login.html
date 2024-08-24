@@ -18,13 +18,13 @@
     <div class="dis_flex">
 
       <div class="bc">
-        <!-- <img style="width: 70px;" src="../cc_logo2.png" /> -->
+        
         <h3>LOGIN</h3>
-        <form>
-          <input type="email" id="email-id" class="padd" required placeholder="Email/User ID" autocomplete="off" name="Email_id" />
+        <form onsubmit="loginUser(event)">
+          <input type="email" id="email_id" class="padd" required placeholder="Email/User ID" autocomplete="off" name="Email_id" />
           <br />
           <br />
-          <input style="margin-bottom: 7%;" type="password" id="password-id" class="padd" required placeholder="Password" minlength="6"
+          <input style="margin-bottom: 7%;" type="password" id="password" class="padd" required placeholder="Password" minlength="6"
             autocomplete="off" name="Password" />
             <!-- <div> -->
               <a class="forgote_pass" href="#">Forgote password?</a>
@@ -33,7 +33,7 @@
           <br />
           <br />
           <div>
-            <a class="col" href="./quizz.html" >Log in</a>
+            <button type="submit"  class="col">Log in</button>
           </div>
         </form>
       </div>
@@ -43,5 +43,7 @@
     </div>
   </div>
 </body>>
+<script src="../JS/login.js">
+</script>
 
 </html>

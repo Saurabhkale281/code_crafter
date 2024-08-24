@@ -23,7 +23,7 @@
         <div class="about" style="width: 80%">
             <b><a class="anc_about" href="#about_us">About us</a></b>
             <b><a class="anc_contact" href="#info">Contact</a></b>
-            <b><a class="anc_feedback" href="#">Feedback</a></b>
+            <b><a class="anc_feedback" href="./feedback.html" target="_blank">Feedback</a></b>
         </div>
     </div>
 
@@ -32,8 +32,8 @@
             <h2 class="qz"><b>ONLINE QUIZ SYSTEM </b></h2>
             <h3 class="qzi"><b>FOR PROGRAMMING LANGUAGES</b></h3>
             <hr />
-            <a class="log" href="./Login.html" target="_blank">LOGIN</a>
-            <a class="reg" href="./Registration.html" target="_blank">REGISTER</a>
+            <button onclick="openNewLogTab()" class="log" >LOGIN</button>
+            <button onclick="openNewRegTab()" class="reg" >REGISTER</button>
             <div class="good">
                 <b>GOOD LUCK</b>
             </div>
@@ -84,5 +84,15 @@
         </div>
     </div>
 </body>
+<script>
+        function openNewRegTab() {
+            var newTab = window.open("./Registration.html", '_blank');
+            newTab.focus();
+        }
+        function openNewLogTab() {
+            var newTab = window.open("./Login.html", '_blank');
+            newTab.focus();
+        }
+</script>
 
 </html>

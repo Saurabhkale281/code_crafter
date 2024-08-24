@@ -1,0 +1,93 @@
+body {
+    background-color: rgba(0, 0, 0, 0.163);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.dis_flex {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 80%;
+    margin: auto;
+    margin-top: 1.5%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 3%;
+}
+
+label {
+    font-size: medium;
+    color: #3c4e9d;
+}
+
+h3 {
+    margin-top: 0%;
+    margin-bottom: 4%;
+    font-size: x-large;
+    color: #3c4e9d;
+    font-weight: bolder;
+}
+
+.in {
+    border: none;
+    background-color: rgba(181, 136, 224, 0.161);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: medium;
+}
+
+input.in {
+    width: 95%; /* Increased width for question and options */
+}
+
+select.in {
+    width: 100%; /* Full width within the flex container */
+}
+
+input:focus, select:focus {
+    outline: 1px solid #3c4e9d;
+}
+
+.reg {
+    color: white;
+    border: 2px solid #3c4e9d;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 6px;
+    background-color: #3c4e9d;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.reg:hover {
+    background-color: #2c3a8d;
+    border-color: #2c3a8d;
+}
+
+/* Flex container for Select Technology and Proficiency Level */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Space between the two dropdowns */
+    margin-bottom: 15px; /* Adjusted margin-bottom for consistency */
+}
+
+.flex-item {
+    flex: 1; /* Make both dropdowns equal width */
+}
+
+.div-between {
+    margin-bottom: 15px; /* Adjusted margin for consistent spacing */
+    display: flex;
+    flex-direction: column;
+}
+
+.but {
+    text-align: center;
+}
+
+.formerror {
+    color: red;
+    font-size: small;
+}

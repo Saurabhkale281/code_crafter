@@ -9,7 +9,7 @@ var requestOptions = {
   headers: myHeaders,
   redirect: 'follow'
 };
-  return await fetch("https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple", requestOptions)
+  return await fetch("httpss://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple", requestOptions)
   .then(response => response.json())
   .then(result => result)
   .catch(error => console.log('error', error));;

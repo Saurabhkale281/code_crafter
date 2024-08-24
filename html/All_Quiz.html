@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px 0px  #3c4e9d;
+            border-radius: 10px;
+            padding: 40px;
+            margin-top: 50px;
+        }
+
+        .question {
+            margin-bottom: 40px;
+        }
+
+        .options {
+            margin-top: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .result-container {
+            display: none; /* Hide result container by default */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .feedback-container {
+            margin-top: 20px; /* Add some space between the results and the button */
+            text-align: center;
+        }
+        .result {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            border: 2px solid #3c4e9d ;
+            border-radius: 10px;
+            background-color: #f1f1f1;
+        }
+
+        .result-item {
+            flex: 1;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .btn-info {
+            background-color: #3c4e9d ;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-info:hover {
+            background-color: #3c4e9d ;
+        }
+
+        .result-item {
+            flex: 1;
+            text-align: center;
+            font-size: 18px;                
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="quiz-container">
+        <div class="question">
+            <h2 class="mb-4" id="question"></h2>
+            <div class="options" id="options-container">
+                <!-- Answer choices will be dynamically populated here -->
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <button class="btn btn-primary" id="previousBtn">Previous</button>
+            <button class="btn btn-primary" id="nextBtn">Next</button>
+            <button class="btn btn-success" id="submitBtn">Submit</button>
+        </div>
+    </div>
+
+    <div class="container result-container" id="result-container">
+        <div class="result" id="result">
+            <div id="correctAnswers" class="result-item">Correct: 0</div>
+            <div class="vertical-line"></div>
+            <div id="incorrectAnswers" class="result-item">Incorrect: 0</div>
+        </div>
+        <div class="feedback-container">
+            <button class="btn btn-info" id="feedbackBtn">Give Feedback</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+
+        // Function to get query parameters
+        function getQueryParam(param) {
+         const urlParams = new URLSearchParams(window.location.search);
+         return urlParams.get(param);
+        }
+
+
+        // Retrieve technology and proficiency level from the URL
+        const technology = getQueryParam('technology');
+        const proficiencyLevel = getQueryParam('level');
+
+        // Encode the parameters to ensure valid URL
+        const encodedTechnology = encodeURIComponent(technology);
+        const encodedProficiencyLevel = encodeURIComponent(proficiencyLevel);
+        
+        const apiUrl =  `https://reglogpage-production.up.railway.app/api/questions/by-criteria?technology=${encodedTechnology}&proficiencyLevel=${encodedProficiencyLevel}`;
+        const optionsContainer = document.getElementById('options-container');
+        const questionElement = document.getElementById('question');
+        const previousBtn = document.getElementById('previousBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        const resultContainer = document.getElementById('result-container');
+        const resultElement = document.getElementById('result');
+
+        let currentQuestionIndex = 0;                           //keep track of current question that display in quiz
+        let questions = [];
+        const selectedAnswers = {};                                // //used to store quiz question 
+
+        async function fetchQuestions() {
+            try {
+                console.log(`Fetching questions from: ${apiUrl}`);
+                const response = await fetch(apiUrl);               //uses fetch function to make asynchronous request
+                questions = await response.json();
+                console.log("API Response Data:", questions);
+                
+                showQuestion(currentQuestionIndex);                 //display current question
+            } catch (error) {
+                console.error('Error fetching questions:', error);
+            }
+        }
+
+        function showQuestion(index) {
+            const question = questions[index];
+            console.log("Current Question:", question);
+
+            if (!question) {
+             console.error('No question found at index:', index);
+             return;
+            }
+            questionElement.textContent = `Question ${index + 1}: ${question.questionText}`;    //update text content of question element
+
+            const answerChoices = question.options;
+            optionsContainer.innerHTML = '';
+            answerChoices.forEach(choice => {                        // It iterates through each answer choice to create HTML elements for radio buttons and labels.
+                const divElement = document.createElement('div');
+                divElement.className = 'form-check mb-3';
+
+                const inputElement = document.createElement('input');  // block creates a new input element for each answer choice
+                inputElement.className = 'form-check-input';
+                inputElement.type = 'radio';
+                inputElement.name = `question${index}`;
+                inputElement.id = `${index}_${choice}`;
+                inputElement.value = choice;
+
+                const labelElement = document.createElement('label');   //create new lable element for each answer choice
+                labelElement.className = 'form-check-label';
+                labelElement.htmlFor = inputElement.id;
+                labelElement.textContent = choice;
+
+                divElement.appendChild(inputElement);
+                divElement.appendChild(labelElement);
+                optionsContainer.appendChild(divElement);
+            });
+        }
+
+        function handleNextQuestion() {                     
+            
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;                             //increment current question index variable by 1
+                showQuestion(currentQuestionIndex);
+            } else {
+                // No more questions, handle end of the quiz
+                // For example, show a "Quiz completed" message
+                alert("You are on the last question.");
+            }
+        }
+
+        function handlePreviousQuestion() {                     //previous question
+            
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion(currentQuestionIndex);
+            } else {
+                // Already at the first question
+                alert("You are on the first question.");
+            }
+        }
+
+        function handleSubmit() {
+            console.log('Submit button clicked');
+            console.log('Selected answers:', selectedAnswers);
+            let correctAnswers = 0;
+            let incorrectAnswers = 0;
+
+            questions.forEach((question) => {
+                const questionText = question.questionText;
+                const selectedAnswer = selectedAnswers[questionText];
+
+                console.log(`Question: ${questionText}`);
+                console.log(`Selected Answer: ${selectedAnswer}`);
+                console.log(`Correct Answer: ${question.correctOption}`);
+
+                if (selectedAnswer === question.correctOption) {
+                    correctAnswers++;
+                } else {
+                    incorrectAnswers++;
+                }
+            });
+
+            document.getElementById('quiz-container').style.display = 'none';
+            resultContainer.style.display = 'flex';
+            // Show correct and incorrect answers
+            document.getElementById('correctAnswers').textContent = `Correct: ${correctAnswers}`;
+            document.getElementById('incorrectAnswers').textContent = `Incorrect: ${incorrectAnswers}`;
+        }
+
+        fetchQuestions();
+
+        // Event listeners for navigation buttons
+        nextBtn.addEventListener('click', handleNextQuestion);
+        previousBtn.addEventListener('click', handlePreviousQuestion);
+        submitBtn.addEventListener('click', handleSubmit);
+
+        optionsContainer.addEventListener('change', (event) => {
+            if (event.target.type === 'radio') {
+                const selectedOption = event.target.value;
+                const questionIndex = currentQuestionIndex;
+                const questionText = questions[questionIndex].questionText;
+                selectedAnswers[questionText] = selectedOption;
+                console.log(`Selected Answer for ${questionText}: ${selectedOption}`);
+            }
+        });
+
+        document.getElementById('feedbackBtn').addEventListener('click', function() {
+            window.location.href = "./feedback.html"; 
+});
+    </script>
+</body>
+
+</html>

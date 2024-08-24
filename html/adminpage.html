@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="../css/adminpage.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="dis_flex">
+        <div class="color">
+            <h3>Admin Panel</h3>
+            
+            <form id="questionForm">
+                <!-- Technology and Proficiency Level -->
+                <div class="flex-container mar">
+                    <div class="flex-item">
+                        <label for="technology">Select Technology:</label>
+                        <select id="technology" name="technology" class="in">
+                            <option value="C">C</option>
+                            <option value="C++">CPP</option>
+                            <option value="Java">Java</option>
+                            <option value="Python">Python</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="SQL">SQL</option>
+                            <option value="PHP">PHP</option>
+                            <option value="TypeScript">TypeScript</option>
+                        </select>
+                    </div>
+                    <div class="flex-item">
+                        <label for="level">Proficiency Level:</label>
+                        <select id="level" name="level" class="in">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <!-- Add Question -->
+                <div class="div-between mar">
+                    <label for="question">Question:</label>
+                    <input type="text" id="question" name="question" class="in" placeholder="Enter your question" required>
+                </div>
+            
+                <!-- Option 1 -->
+                <div class="div-between mar">
+                    <label for="option1">Option 1:</label>
+                    <input type="text" id="option1" name="option1" class="in" placeholder="Enter option 1" required>
+                </div>
+            
+                <!-- Option 2 -->
+                <div class="div-between mar">
+                    <label for="option2">Option 2:</label>
+                    <input type="text" id="option2" name="option2" class="in" placeholder="Enter option 2" required>
+                </div>
+            
+                <!-- Option 3 -->
+                <div class="div-between mar">
+                    <label for="option3">Option 3:</label>
+                    <input type="text" id="option3" name="option3" class="in" placeholder="Enter option 3" required>
+                </div>
+            
+                <!-- Option 4 -->
+                <div class="div-between mar">
+                    <label for="option4">Option 4:</label>
+                    <input type="text" id="option4" name="option4" class="in" placeholder="Enter option 4" required>
+                </div>
+            
+                <!-- Correct Option -->
+                <!-- Correct Option -->
+                <div class="div-between mar">
+                    <label for="correct_option">Correct Option:</label>
+                    <input type="text" id="correct_option" name="correct_option" class="in" placeholder="Enter the correct option" required>
+                </div>
+
+            
+                <!-- Submit Button -->
+                <div class="but">
+                    <button type="submit" class="reg" onclick="addQuestion(event)">Add Question</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</body>
+<script src="../JS/addQuestions.js">
+</script>
+</html>

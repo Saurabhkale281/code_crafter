@@ -19,7 +19,7 @@
     box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.5);
     background-color: white;
     color: #3c4e9d;
-    font-size: 150%;
+    font-size: 120%;
     /* margin-top: 15%; */
     /* margin-left: 12%; */
     padding: 6% 5% 5% 5%;
@@ -27,29 +27,8 @@
    
 
 }
-.content{
-    /* text-align: center; */
-    
-
-}
 
 
-
-/* .c_concepts{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    height: 150px;
-    width: 300px;
-    border-radius: 15px;
-    box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.5);
-    padding: 0% 0% 0% 0%;
-    background-color: white;
-    color: #3c4e9d;
-    font-size: 110%;
-    /* font-weight: 400; */
-    /* margin-top: 7%; */
-    /* margin: auto;   
-    margin-top: 10%;
-} */
  .c_concepts:hover{
     transform: scale(1.1);
 }
