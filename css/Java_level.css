@@ -1,17 +1,11 @@
-.dis_flex{
+.dis_flex {
     display: flex;
-    /* flex-wrap: wrap; */
-    /* justify-content: center;
-    align-items: center; */
-    /* position: absolute; */
-    /* place-items: center;*/
-     display: flex;
-    justify-content: space-around; 
+    justify-content: space-around;
     align-items: center;
     margin-top: 10%;
 }
-.c_concepts{
-    /* justify-content: space-around; */
+
+.c_concepts {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     height: 60px;
     width: 100px;
@@ -20,21 +14,57 @@
     background-color: white;
     color: #3c4e9d;
     font-size: 120%;
-    /* margin-top: 15%; */
-    /* margin-left: 12%; */
     padding: 6% 5% 5% 5%;
-    /* justify-content: center; */
-   
-
 }
 
-
- .c_concepts:hover{
-    transform: scale(1.1);
-}
-a{
+a {
     text-decoration: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .dis_flex {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 10%;
+    }
     
-} 
+    .c_concepts {
+        height: 60px;
+        width: 100px;
+        border-radius: 15px;
+        box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.5);
+        background-color: white;
+        color: #3c4e9d;
+        font-size: 120%;
+        padding: 6% 5% 5% 5%;
+    }
+    
+    .c_concepts:hover {
+        transform: scale(1.1);
+    }
+    
+    a {
+        text-decoration: none;
+    }
+}
 
+/* Media Query for screens with max-width 1023px */
+@media screen and (max-width: 1023px) {
+    .dis_flex {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+        margin-top: 10%;
+    }
 
+    .c_concepts {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        height: 400px;
+        width: 500px;
+        font-size: 45px;
+        margin-bottom: 100px; /* Space between stacked containers */
+        padding: 100px 5% 0% 5%;
+    }
+}
