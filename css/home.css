@@ -442,13 +442,13 @@ a{
         font-size: 30px; /* Increased font size */
         text-align: center;
         padding-top: 1%;
-        padding-left: 2%;
+        padding-left: 1%;
         margin-left: 4%;
     }
 
     .anc_about, .anc_contact, .anc_feedback {
         padding-left: 5%;
-        padding-right: 12%;
+        padding-right: 10%;
         text-align: center;
     }
 
@@ -519,7 +519,7 @@ a{
 
     .about_text {
         width: 80%;
-        font-size: larger;
+        font-size: 20px;
         padding: 2%;
         text-align: justify;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -535,7 +535,7 @@ a{
         /* text-align: center; */
         font-size: small;
         padding-top: 3%;
-        padding-left: 50%;
+        padding-left: 75%;
         
     }
 
@@ -556,7 +556,7 @@ a{
         width: 100%;
         text-align: justify;
         padding: 0 0%;
-        font-size: xx-large;
+        font-size: 20px;
     }
     .contactImg{
         width: 25%;
@@ -565,10 +565,10 @@ a{
 
     .Contact_info {
         /* width: 90%; */
-        padding-left: 13%;
+        padding-left: 33%;
         /* font-size: medium; */
         text-align: center;
-        font-size: 28px;
+        font-size: 20px;
         margin-top: -5%;
         
     }
@@ -580,141 +580,18 @@ a{
     .Contact_info_email {
         /* width: 100%; */
         /* text-align: center; */
-        padding-top: -15px;
-        margin-left: 20%;
-        font-size: 10px;
+        padding-top: -50px;
+        margin-left: 40%;
+        font-size: 12px;
     }
     .socialImg{
         margin-left: 5%;
         margin-top: 15px;
     }
     .socialImgInsta{
-        margin-left: 20%;
+        margin-top: 7%;
+        margin-left: 40%;
     }
 }
 
 
-/* For screen size max-width: 768px */
-@media screen and (max-width: 768px) {
-    /* Remove the first image */
-    .image:first-child {
-        display: none;
-    }
-
-    .nav_flex {
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-    }
-
-    .logo-div {
-        width: 20%;
-        padding: 2% 0;
-    }
-
-    .quiz_title {
-        width: 100%;
-        font-size: 18px; /* Increased font size */
-        text-align: center;
-        padding-top: 2%;
-    }
-
-    .about {
-        width: 100%;
-        font-size: 18px; /* Increased font size */
-        text-align: center;
-        padding-top: 2%;
-    }
-
-    .anc_about, .anc_contact, .anc_feedback {
-        padding-left: 0;
-        margin: 1% auto;
-        text-align: center;
-    }
-
-    .dis_flex {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .qz {
-        font-size: 250%; /* Increased size */
-        margin: 5% 0;
-        text-align: center;
-    }
-
-    .qzi {
-        font-size: 140%; /* Increased size */
-        margin-top: 3%;
-        text-align: center;
-    }
-
-    hr {
-        width: 30%;
-        margin: 3% auto;
-    }
-
-    .log, .reg {
-        width: 90%;
-        margin: 3% auto;
-        text-align: center;
-    }
-
-    img {
-        width: 90%;
-        height: auto;
-        margin: 5% auto;
-    }
-
-    .good {
-        font-size: 120%; /* Increased font size */
-        margin: 5% auto;
-        text-align: center;
-    }
-
-    .about_flex {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 8%;
-    }
-
-    .about_text {
-        width: 90%;
-        padding: 3%;
-        text-align: center;
-    }
-
-    .about_img {
-        width: 90%;
-        margin: 5% auto;
-    }
-
-    .found_title {
-        padding-left: 0;
-        text-align: center;
-        font-size: medium;
-        margin-top: 5%;
-    }
-
-    .Contact_flex {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 6%;
-    }
-
-    .Contact_logo, .Contact_info {
-        width: 90%;
-        margin: 3% auto;
-        text-align: center;
-    }
-
-    .Contact_info_email {
-        text-align: center;
-    }
-
-    .Contact_para {
-        padding: 0 5%;
-        text-align: center;
-    }
-}
