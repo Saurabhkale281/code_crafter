@@ -33,7 +33,7 @@ function addQuestion(event) {
     };
 
     // Send the request to the backend
-    fetch("https://reglogpage-production.up.railway.app/api/questions/add", requestOptions)
+    fetch("https://reglogpage.onrender.com/api/questions/add", requestOptions)
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);

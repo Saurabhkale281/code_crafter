@@ -27,7 +27,7 @@ function registerUser(event) {
       redirect: "follow"
     };
 
-    fetch("https://reglogpage-production.up.railway.app/register", requestOptions)                   //https://reglogpage-production.up.railway.app/register
+    fetch("https://reglogpage.onrender.com//register", requestOptions)                   //https://reglogpage-production.up.railway.app/register
     .then((response) => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
