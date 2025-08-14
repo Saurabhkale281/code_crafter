@@ -20,7 +20,7 @@ function loginUser(event) {
         redirect: 'follow'
     };
 
-    fetch("https://reglogpage.onrender.com/login", requestOptions)                   //https://reglogpage-production.up.railway.app/login
+    fetch("https://reglogpage-1.onrender.com/login", requestOptions)                   //https://reglogpage-production.up.railway.app/login
     .then(response => response.json()) // Parse the response as JSON
     .then(result => {
         console.log("Server response:", result);
