@@ -181,12 +181,12 @@
                 inputElement.type = 'radio';
                 inputElement.name = `question${index}`;
                 inputElement.id = `${index}_${choice}`;
-                inputElement.value = choice;
+                inputElement.value = choice;                    //actual value when select
 
                 const labelElement = document.createElement('label');   //create new lable element for each answer choice
                 labelElement.className = 'form-check-label';
-                labelElement.htmlFor = inputElement.id;
-                labelElement.textContent = choice;
+                labelElement.htmlFor = inputElement.id;                // link lable with radio buttons
+                labelElement.textContent = choice;                          //display option 
 
                 divElement.appendChild(inputElement);
                 divElement.appendChild(labelElement);
